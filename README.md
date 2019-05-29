@@ -1,6 +1,6 @@
 # simpleProxy
 
-获取IP代理池及User-Agent代理池 本地读取免数据库
+获取IP代理池及User-Agent代理池 无需数据库
 
 This project is used to provide IP agent pool and user-agent pool for reptiles.
 
