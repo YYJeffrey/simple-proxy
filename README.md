@@ -17,6 +17,5 @@ This project is used to provide IP agent pool and user-agent pool for reptiles.
 #### 三、运行脚本
     python pool_ip.py
     python proxy_test.py
-* pool_ip.py可不运行，文件已存在
 * 代理ip来自于西刺代理：http://www.xicidaili.com/nn/
 * 代理user-agent来自于fake-useragent：https://fake-useragent.herokuapp.com/browsers/0.1.8
