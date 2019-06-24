@@ -7,8 +7,7 @@ from bs4 import BeautifulSoup
 
 class XiCiSpider:
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.1'
-                      '01 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1464.0 Safari/537.36'
     }
     timeout = 2.5
 
@@ -56,6 +55,7 @@ class XiCiSpider:
         test_ip_url = 'http://icanhazip.com'
         test_code_url = 'https://www.baidu.com'
         proxies = {'http': proxy['addr']}
+        # noinspection PyBroadException
         try:
             html_ip = requests.get(url=test_ip_url, headers=self.headers, proxies=proxies, timeout=self.timeout).text
             cur_ip = html_ip.strip()
@@ -65,14 +65,5 @@ class XiCiSpider:
                 if html_baidu.status_code == 200:
                     return True
             return False
-        except Exception as e:
-            print(e.__class__)
+        except Exception:
             return False
-
-# if __name__ == '__main__':
-#     spider = XiCiSpider(3)
-#     spider.get_html()
-#     tr = spider.parse_html()
-#     spider.download_data(tr)
-#     for i in range(len(spider.addrs)):
-#         print(spider.addrs[i])

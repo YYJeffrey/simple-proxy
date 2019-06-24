@@ -22,7 +22,7 @@ class UaPool:
         self.ua = ua_chrome + ua_opera + ua_firefox + ua_safari + ua_inter
 
     def save_ua_pool(self):
-        f = open(self.ua_path, 'a')
+        f = open(self.ua_path, 'w')
         data = self.ua
         for i in range(len(data)):
             if i < len(data) - 1:

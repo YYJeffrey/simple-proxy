@@ -5,10 +5,10 @@ from threading import Thread
 
 from spider.xici import XiCiSpider
 
+IP_PATH = 'proxy_pool/ip.txt'
+
 
 class IpPool:
-    ip_path = 'proxy_pool/ip.txt'
-
     def __init__(self, start, end):
         self.start = start
         self.end = end
@@ -28,12 +28,16 @@ class IpPool:
             t = Thread(target=self.get_single_ip_pool, args=(page,))
             t.start()
 
-    def save_ip_pool(self, proxy):
-        f = open(self.ip_path, 'a')
+    @staticmethod
+    def save_ip_pool(proxy):
+        f = open(IP_PATH, 'a')
         f.writelines(str(proxy) + '\n')
         f.close()
 
 
 if __name__ == '__main__':
+    f = open(IP_PATH, 'r+')
+    f.truncate()    # 清空文件
+    f.close()
     pool = IpPool(1, 10)
     pool.get_proxy_pool()
