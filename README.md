@@ -17,8 +17,8 @@ This project is used to provide IP agent pool and user-agent pool for reptiles.
     pip install bs4
 
 #### 四、运行脚本
-    python pool_ua.py # 获取代理头（可不运行，文件一寸照）
-    python pool_ip.py # 获取代理ip
+	python pool_ip.py # 获取代理ip
+    python pool_ua.py # 获取代理头（可不运行，文件已存在）
     python proxy_test.py http://www.baidu.com # 测试代理ip（参数未所要请求的地址，可根据自己的业务逻辑重构）
 
 * 代理ip来自于西刺代理：http://www.xicidaili.com/nn/
