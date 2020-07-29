@@ -1,4 +1,4 @@
-# simpleProxy
+# simple-proxy
 多线程获取IP代理池及User-Agent代理池，文件存储无需数据库
 
 ## 使用步骤
